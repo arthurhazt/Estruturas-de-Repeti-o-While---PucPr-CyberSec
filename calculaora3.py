@@ -1,12 +1,10 @@
 def calcular(expressao):
     tokens = expressao.split()
-
-    # Converter números
+
     for i in range(len(tokens)):
         if tokens[i] not in "+-*/":
             tokens[i] = float(tokens[i])
-
-    # Resolver * e /
+
     i = 0
     while i < len(tokens):
         if tokens[i] == "*":
@@ -21,8 +19,7 @@ def calcular(expressao):
             i = 0
         else:
             i += 1
-
-    # Resolver + e -
+
     i = 0
     while i < len(tokens):
         if tokens[i] == "+":
@@ -38,8 +35,7 @@ def calcular(expressao):
 
     return tokens[0]
 
-
-# Loop principal
+
 while True:
     expr = input("\nDigite uma expressão (ou 'sair'): ")
 
